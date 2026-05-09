@@ -1,7 +1,7 @@
 const copyButtons = document.querySelectorAll("[data-copy]");
 
 for (const button of copyButtons) {
-  const original = button.textContent.trim();
+  const original = button.innerHTML;
 
   button.addEventListener("click", async () => {
     const value = button.dataset.copy || "";
@@ -10,12 +10,12 @@ for (const button of copyButtons) {
       await navigator.clipboard.writeText(value);
       button.textContent = "copied";
       window.setTimeout(() => {
-        button.textContent = original;
+        button.innerHTML = original;
       }, 900);
     } catch {
       button.textContent = "copy failed";
       window.setTimeout(() => {
-        button.textContent = original;
+        button.innerHTML = original;
       }, 900);
     }
   });

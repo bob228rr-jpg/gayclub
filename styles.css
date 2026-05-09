@@ -492,6 +492,51 @@ h3 {
   margin-top: 24px;
 }
 
+.contract-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px solid transparent;
+  border-radius: 26px;
+  background:
+    linear-gradient(rgba(255,255,255,0.06), rgba(255,255,255,0.06)) padding-box,
+    linear-gradient(135deg, var(--pink), var(--orange), var(--yellow), var(--green), var(--cyan), var(--purple)) border-box;
+  backdrop-filter: blur(10px);
+}
+
+.contract-label {
+  color: rgba(246,248,242,0.68);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contract-card code {
+  min-width: 0;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(7, 16, 8, 0.58);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.contract-copy {
+  min-height: 42px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--text);
+  color: #091009;
+  font-weight: 800;
+  cursor: pointer;
+}
+
 .step {
   display: grid;
   grid-template-columns: 72px 1fr;
@@ -598,6 +643,14 @@ h3 {
 
   .meme-card p {
     font-size: 24px;
+  }
+
+  .contract-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contract-copy {
+    width: 100%;
   }
 
   .step {
